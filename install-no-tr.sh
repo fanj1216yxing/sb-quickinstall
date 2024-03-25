@@ -6,4 +6,4 @@ sudo mkswap /swapfile
 sudo swapon /swapfile
 sudo swapon --show
 free -h
-
+bash <(wget -qO- https://raw.githubusercontent.com/fanj1216yxing/sb-quickinstall/main/better.sh)
