@@ -9,5 +9,4 @@ mkswap /swapfile
 swapon /swapfile
 swapon --show
 free -h
-apt install lsof
-echo '* - nofile 999900' | sudo tee -a /etc/security/limits.conf
+bash <(wget -qO- https://raw.githubusercontent.com/fanj1216yxing/sb-quickinstall/main/better.sh)
