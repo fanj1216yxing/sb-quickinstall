@@ -232,7 +232,7 @@ DOWNLOAD_URL="$WEB_HOST$PACK_NAME"
 # 2 安装至 TRANSMISSION_WEB_HOME 环境变量指定的目录，参考：https://github.com/transmission/transmission/wiki/Environment-Variables#transmission-specific-variables
 # 使用环境变量时，如果 transmission 不是当前用户运行的，则需要将 TRANSMISSION_WEB_HOME 添加至 /etc/profile 文件，以达到“永久”的目的
 # 3 用户指定参数做为目录，如 sh install-tr-control.sh /usr/local/transmission/share/transmission
-INSTALL_TYPE=-1
+INSTALL_TYPE=1
 SKIP_SEARCH=0
 AUTOINSTALL=0
 if which whoami 2>/dev/null; then
