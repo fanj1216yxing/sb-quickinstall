@@ -234,7 +234,7 @@ DOWNLOAD_URL="$WEB_HOST$PACK_NAME"
 # 3 用户指定参数做为目录，如 sh install-tr-control.sh /usr/local/transmission/share/transmission
 INSTALL_TYPE=1
 SKIP_SEARCH=0
-AUTOINSTALL=0
+AUTOINSTALL=1
 if which whoami 2>/dev/null; then
 	USER=`whoami`
 fi
