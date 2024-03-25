@@ -1,5 +1,3 @@
-apt-get install screen -y
-screen -S lnmp
 wget --no-check-certificate https://lnmp.club/lnmp1.9-full.tar.gz
 md5sum lnmp1.9-full.tar.gz
 tar zxf lnmp1.9-full.tar.gz && cd lnmp1.9-full && LNMP_Auto="y" DBSelect="10" Bin="n" DB_Root_Password="99905230523" InstallInnodb="y" PHPSelect="12" SelectMalloc="1" ./install.sh lnmp
