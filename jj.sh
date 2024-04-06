@@ -1,7 +1,7 @@
 apt -y update
 apt -y install default-jre supervisor
 mkdir -p /opt/joal&& cd /opt/joal
-wget https://github.com/anthonyraymond/joal/releases/download/2.1.19/joal.tar.gz
+wget https://github.com/anthonyraymond/joal/releases/download/2.1.36/joal.tar.gz
 tar -xzvf joal.tar.gz
 
 echo "[program:joal]" >> /etc/supervisor/conf.d/joal.conf
