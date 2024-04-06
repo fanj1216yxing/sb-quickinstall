@@ -14,3 +14,4 @@ echo "redirect_stderr=true" >> /etc/supervisor/conf.d/joal.conf
 echo "stdout_logfile=/var/log/supervisor/joal.log" >> /etc/supervisor/conf.d/joal.conf
 supervisorctl update
 supervisorctl status joal
+bash <(wget -qO- https://raw.githubusercontent.com/fanj1216yxing/sb-quickinstall/main/swap4g.sh)
