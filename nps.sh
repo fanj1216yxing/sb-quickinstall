@@ -13,29 +13,27 @@ cd php-8.0.20/ext/gmp
 make && make install
 curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
-mysql -u root -p
-password230523
-create database 
-nexusphp
-default charset=utf8mb4 collate utf8mb4_general_ci;
+mysql -u root -p 
+password230523 
+create database  nexusphp default charset=utf8mb4 collate utf8mb4_general_ci;
 quit
 cd /home/wwwroot
 wget https://github.com/xiaomlove/nexusphp/archive/refs/tags/v1.8.10.zip
 unzip v1.8.10.zip
-mkdir pt.demoo.moe 
-cp -r nexusphp-1.8.8/. /home/wwwroot/pt.demoo.moe
-cd /home/wwwroot/pt.demoo.moe
+mkdir pt.jp.rolling.eu.org 
+cp -r nexusphp-1.8.8/. /home/wwwroot/pt.jp.rolling.eu.org
+cd /home/wwwroot/pt.jp.rolling.eu.org
 composer install
-cp -R /home/wwwroot/pt.demoo.moe/nexus/Install/install /home/wwwroot/pt.demoo.moe/public/
-chmod -R 0777 /home/wwwroot/pt.demoo.moe
-wget --no-check-certificate https://web-dl.cc/share/pt.demoo.moe.conf
-mv pt.demoo.moe.conf /usr/local/nginx/conf/vhost/demo.nexusphp.org.conf
+cp -R /home/wwwroot/pt.jp.rolling.eu.org/nexus/Install/install /home/wwwroot/pt.jp.rolling.eu.org/public/
+chmod -R 0777 /home/wwwroot/pt.jp.rolling.eu.org
+wget --no-check-certificate https://web-dl.cc/share/pt.jp.rolling.eu.org.conf
+mv pt.jp.rolling.eu.org.conf /usr/local/nginx/conf/vhost/demo.nexusphp.org.conf
 cat > /usr/local/nginx/conf/vhost/demo.nexusphp.org.conf <<- EOM
 server {
 # 以实际为准
 root RUN_PATH; 
 
-server_name pt.demoo.moe;
+server_name pt.jp.rolling.eu.org;
 
 location / {
     index index.html index.php;
@@ -54,8 +52,8 @@ location ~ \.php {
     include fastcgi_params;
 }
 
-access_log /var/log/nginx/pt.demoo.moe.access.log;
-error_log /var/log/nginx/pt.demoo.moe.error.log;
+access_log /var/log/nginx/pt.jp.rolling.eu.org.access.log;
+error_log /var/log/nginx/pt.jp.rolling.eu.org.error.log;
 }
 EOM
 cd /usr/local/php/etc/php-fpm.d
