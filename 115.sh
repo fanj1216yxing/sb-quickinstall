@@ -1,13 +1,13 @@
 cd /home/wwwroot
-wget https://github.com/xiaomlove/nexusphp/archive/refs/tags/v1.8.10.zip
-unzip v1.8.10.zip
+wget https://github.com/xiaomlove/nexusphp/archive/refs/tags/v1.8.12.zip
+unzip v1.8.12.zip
 mkdir pt.rolling.jp.eu.org
-cp -r nexusphp-1.8.10/. /home/wwwroot/pt.rolling.jp.eu.org
-cd /home/wwwroot/pt.jp.rolling.eu.org
+cp -r nexusphp-1.8.12/. /home/wwwroot/pt.rolling.jp.eu.org
+cd /home/wwwroot/pt.rolling.jp.eu.org
 composer install --ignore-platform-reqs
 cp -R /home/wwwroot/pt.rolling.jp.eu.org/nexus/Install/install /home/wwwroot/pt.rolling.jp.eu.org/public/
 chmod -R 0777 /home/wwwroot/pt.rolling.jp.eu.org
-wget --no-check-certificate https://web-dl.cc/share/pt.jp.rolling.eu.org.conf
+wget --no-check-certificate https://web-dl.cc/share/pt.rolling.jp.eu.org.conf
 mv pt.rolling.jp.eu.org.conf /usr/local/nginx/conf/vhost/demo.nexusphp.org.conf
 cat > /usr/local/nginx/conf/vhost/demo.nexusphp.org.conf <<- EOM
 server {
