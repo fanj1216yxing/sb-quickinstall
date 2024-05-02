@@ -1,8 +1,8 @@
 cd /home/wwwroot
-wget https://github.com/xiaomlove/nexusphp/archive/refs/tags/v1.8.12.zip
-unzip v1.8.12.zip
+wget https://github.com/xiaomlove/nexusphp/archive/refs/tags/v1.8.10.zip
+unzip v1.8.10.zip
 mkdir pt.rolling.jp.eu.org
-cp -r nexusphp-1.8.12/. /home/wwwroot/pt.rolling.jp.eu.org
+cp -r nexusphp-1.8.10/. /home/wwwroot/pt.rolling.jp.eu.org
 cd /home/wwwroot/pt.rolling.jp.eu.org
 composer install --ignore-platform-reqs
 cp -R /home/wwwroot/pt.rolling.jp.eu.org/nexus/Install/install /home/wwwroot/pt.rolling.jp.eu.org/public/
