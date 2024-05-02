@@ -4,7 +4,7 @@ unzip v1.8.10.zip
 mkdir pt.jp.rolling.eu.org 
 cp -r nexusphp-1.8.10/. /home/wwwroot/pt.jp.rolling.eu.org
 cd /home/wwwroot/pt.jp.rolling.eu.org
-composer install
+composer install --ignore-platform-reqs
 cp -R /home/wwwroot/pt.jp.rolling.eu.org/nexus/Install/install /home/wwwroot/pt.jp.rolling.eu.org/public/
 chmod -R 0777 /home/wwwroot/pt.jp.rolling.eu.org
 wget --no-check-certificate https://web-dl.cc/share/pt.jp.rolling.eu.org.conf
