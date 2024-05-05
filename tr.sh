@@ -130,7 +130,7 @@ cat > $SETTINGSFILE <<- EOM
     "download-queue-size": 100,
     "encryption": 1,
     "idle-seeding-limit": 30,
-    "idle-seeding-limit-enabled": true,
+    "idle-seeding-limit-enabled": false,
     "incomplete-dir": "/home/downloads/incomplete/",
     "incomplete-dir-enabled": false,
     "lazy-bitfield-enabled": true,
