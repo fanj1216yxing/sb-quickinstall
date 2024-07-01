@@ -7,7 +7,7 @@ tar -xzvf joal.tar.gz
 
 echo "[program:joal]" >> /etc/supervisor/conf.d/joal.conf
 echo "priority=1" >> /etc/supervisor/conf.d/joal.conf
-echo "command=/usr/bin/java -jar jack-of-all-trades-2.1.36.jar --joal-conf="/opt/joal" --spring.main.web-environment=true --server.port=3105 --joal.ui.path.prefix="imlala" --joal.ui.secret-token="lala.im"
+echo "command=sleep 20 && /usr/bin/java -jar jack-of-all-trades-2.1.36.jar --joal-conf="/opt/joal" --spring.main.web-environment=true --server.port=3105 --joal.ui.path.prefix="imlala" --joal.ui.secret-token="lala.im"
 autostart=true" >> /etc/supervisor/conf.d/joal.conf
 echo "autostart=true" >> /etc/supervisor/conf.d/joal.conf
 echo "autorestart=true" >> /etc/supervisor/conf.d/joal.conf
