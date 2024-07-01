@@ -1,8 +1,10 @@
 apt -y update
-apt -y install default-jre supervisor
-mkdir -p /opt/joal&& cd /opt/joal
-wget https://github.com/anthonyraymond/joal/releases/download/2.1.36/joal.tar.gz
-tar -xzvf joal.tar.gz
+apt install curl
+y
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+mkdir -p /home/joals&& cd /home/joals
+docker run -d -p 3105:3105 -v /home/joals:/data --name="joal" anthonyraymond/joal:2.1.36 --joal-conf="/data" --spring.main.web-environment=true --server.port="3105" --joal.ui.path.prefix="imlala" --joal.ui.secret-token="lala.im"
 
 echo "[program:joal]" >> /etc/supervisor/conf.d/joal.conf
 echo "priority=1" >> /etc/supervisor/conf.d/joal.conf
@@ -12,5 +14,3 @@ echo "autostart=true" >> /etc/supervisor/conf.d/joal.conf
 echo "autorestart=true" >> /etc/supervisor/conf.d/joal.conf
 echo "redirect_stderr=true" >> /etc/supervisor/conf.d/joal.conf
 echo "stdout_logfile=/var/log/supervisor/joal.log" >> /etc/supervisor/conf.d/joal.conf
-supervisorctl update
-supervisorctl status joal
