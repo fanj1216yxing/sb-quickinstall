@@ -12,6 +12,7 @@ echo "autostart=true" >> /etc/supervisor/conf.d/joal.conf
 echo "autorestart=true" >> /etc/supervisor/conf.d/joal.conf
 echo "redirect_stderr=true" >> /etc/supervisor/conf.d/joal.conf
 echo "stdout_logfile=/var/log/supervisor/joal.log" >> /etc/supervisor/conf.d/joal.conf
+sudo chmod -R 777 /opt
 supervisorctl update
 supervisorctl status joal
 sleep 30
