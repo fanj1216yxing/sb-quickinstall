@@ -15,6 +15,6 @@ echo "stdout_logfile=/var/log/supervisor/joal.log" >> /etc/supervisor/conf.d/joa
 supervisorctl update
 supervisorctl status joal
 sleep 30
-wget -P /opt/joal https://raw.githubusercontent.com/fanj1216yxing/sb-quickinstall/main/config.json
+wget -P /opt/joal https://raw.githubusercontent.com/fanj1216yxing/sb-quickinstall/main/config.json -O
 sleep 30
 supervisorctl restart joal
