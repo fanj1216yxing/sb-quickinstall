@@ -5,7 +5,7 @@ sudo chmod -R 777 /opt
 wget https://github.com/anthonyraymond/joal/releases/download/2.1.36/joal.tar.gz
 tar -xzvf joal.tar.gz
 wget -P /opt/joal https://raw.githubusercontent.com/fanj1216yxing/sb-quickinstall/main/config.json -O config.json
-/usr/bin/java -jar -Xmx512m jack-of-all-trades-2.1.36.jar --joal-conf="/opt/joal" --spring.main.web-environment=true --server.port=3105 --joal.ui.path.prefix="imlala" --joal.ui.secret-token="lala.im"
+/usr/bin/java -jar -Xmx512m -Xss10m jack-of-all-trades-2.1.36.jar --joal-conf="/opt/joal" --spring.main.web-environment=true --server.port=3105 --joal.ui.path.prefix="imlala" --joal.ui.secret-token="lala.im"
 autostart=true
 sleep 120
 exit
