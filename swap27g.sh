@@ -1,4 +1,4 @@
-fallocate -l 27G /swapfile
+fallocate -l 18G /swapfile
 
 ls -lh /swapfile
 
