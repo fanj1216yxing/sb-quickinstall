@@ -18,7 +18,7 @@ wapon
 
 apt install lsof
 
-apt install curl
+apt install curl -y
 
 echo '* - nofile 999900' | sudo tee -a /etc/security/limits.conf
 
