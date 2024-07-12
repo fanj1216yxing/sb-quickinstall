@@ -18,6 +18,8 @@ wapon
 
 apt install lsof
 
+apt install curl
+
 echo '* - nofile 999900' | sudo tee -a /etc/security/limits.conf
 
 ulimit -n 999900
