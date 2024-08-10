@@ -1,6 +1,6 @@
 sudo apt-get install cpulimit -y
 
-fallocate -l 18G /swapfile
+fallocate -l 10G /swapfile
 
 ls -lh /swapfile
 
