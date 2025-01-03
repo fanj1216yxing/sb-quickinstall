@@ -1,5 +1,7 @@
 apt install curl unzip wget -y
-bash <(wget -qO- https://raw.githubusercontent.com/jerry048/Dedicated-Seedbox/main/Install.sh) -u aaa -p 123456  -c 1500 -q 4.3.9 -l v1.2.19
+RAM=$(free -m | awk '/^Mem:/{print $2}')
+CACHE_SIZE=$((RAM / 8))
+bash <(wget -qO- https://raw.githubusercontent.com/jerry048/Dedicated-Seedbox/main/Install.sh) -u aaa -p 123456  -c $CACHE_SIZE -q 4.3.9 -l v1.2.19
 bash <(wget -qO- https://raw.githubusercontent.com/fanj1216yxing/sb-quickinstall/main/tr.sh)
 1
 1
