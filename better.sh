@@ -58,4 +58,6 @@ echo -e "${gl_lv}切换到网站搭建优化模式...${gl_bai}"
 
  docker run -d --restart=always --name="portainer" -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock 6053537/portainer-ce
 
+ curl wget sudo socat htop iftop unzip tar tmux ffmpeg btop ranger ncdu fzf vim nano git
+
 
