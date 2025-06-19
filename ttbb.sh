@@ -7,7 +7,7 @@ USERNAME=${SUDO_USER:-$USER}
 HOMEDIR=$(eval echo ~$USERNAME)
 
 WEB_USER="admin"
-WEB_PASS="99905230523.aoi"  # <-- 修改为你需要的密码
+WEB_PASS="99905230523.aoi"  #  <-- 修改为你需要的密码
 
 echo "📦 安装 Syncthing..."
 sudo apt update
