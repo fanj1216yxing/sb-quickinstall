@@ -1,4 +1,12 @@
 apt install lsof
+apt install curl unzip wget -y 
+#add swap、zram
+apt install curl unzip wget -y && sudo fallocate -l 8G /swapfile && ls -lh /swapfile && chmod 600 /swapfile && mkswap /swapfile && swapon /swapfile && swapon --show && free -h 
+curl -L https://raw.githubusercontent.com/spiritLHLS/addzram/main/addzram.sh -o addzram.sh && chmod +x addzram.sh && bash addzram.sh
+sudo swapoff /swapfile
+sudo swapon --priority 10 /swapfile
+sudo swapon /swapfile
+
 
 echo '* - nofile 999900' | sudo tee -a /etc/security/limits.conf
 ulimit -n 999900
@@ -16,7 +24,6 @@ sudo iptables -P INPUT ACCEPT && sudo iptables -P FORWARD ACCEPT && sudo iptable
 bash -c 'echo -e "* soft nofile 1048576\n* hard nofile 1048576" >> /etc/security/limits.conf && echo "session required pam_limits.so" >> /etc/pam.d/common-session && echo "fs.file-max = 1048576" >> /etc/sysctl.conf && sysctl -p && SERVICE_NAME=yourapp.service && SERVICE_PATH=/etc/systemd/system/$SERVICE_NAME && echo -e "[Unit]\nDescription=High FD App\nAfter=network.target\n\n[Service]\nExecStart=/usr/bin/env bash -c '\''echo Hello World'\''\nRestart=always\nLimitNOFILE=1048576\n\n[Install]\nWantedBy=multi-user.target" > $SERVICE_PATH && systemctl daemon-reexec && systemctl daemon-reload && systemctl enable --now $SERVICE_NAME'
 
 curl -L https://raw.githubusercontent.com/spiritLHLS/one-click-installation-script/main/install_scripts/dlm.sh -o dlm.sh && chmod +x dlm.sh && bash dlm.sh
-curl -L https://raw.githubusercontent.com/spiritLHLS/addzram/main/addzram.sh -o addzram.sh && chmod +x addzram.sh && bash addzram.sh
 
 echo 'vm.swappiness=90' >> /etc/sysctl.conf
 sysctl -p
