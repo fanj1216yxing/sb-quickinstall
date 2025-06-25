@@ -4,6 +4,7 @@ apt install curl unzip wget -y
 apt install curl unzip wget -y && sudo fallocate -l 8G /swapfile && ls -lh /swapfile && chmod 600 /swapfile && mkswap /swapfile && swapon /swapfile && swapon --show && free -h 
 curl -L https://raw.githubusercontent.com/spiritLHLS/addzram/main/addzram.sh -o addzram.sh && chmod +x addzram.sh && bash addzram.sh
 sudo swapoff /swapfile
+grep -q '^/swapfile' /etc/fstab || echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 sudo swapon --priority 10 /swapfile
 sudo swapon /swapfile
 
