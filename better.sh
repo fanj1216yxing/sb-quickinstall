@@ -1,7 +1,7 @@
 apt install lsof
 apt install curl unzip wget -y 
 #add swap、zram
-apt install curl unzip wget -y && sudo fallocate -l 32G /home/Downloads/swapfile && ls -lh /home/Downloads/swapfile && chmod 600 /home/Downloads/swapfile && mkswap /home/Downloads/swapfile && swapon /home/Downloads/swapfile && swapon --show && free -h 
+apt install curl unzip wget -y && sudo fallocate -l 2G /home/Downloads/swapfile && ls -lh /home/Downloads/swapfile && chmod 600 /home/Downloads/swapfile && mkswap /home/Downloads/swapfile && swapon /home/Downloads/swapfile && swapon --show && free -h 
 curl -L https://raw.githubusercontent.com/spiritLHLS/addzram/main/addzram.sh -o addzram.sh && chmod +x addzram.sh && bash addzram.sh
 sudo swapoff /home/Downloads/swapfile
 grep -q '^/home/Downloads/swapfile' /etc/fstab || echo '/home/Downloads/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
