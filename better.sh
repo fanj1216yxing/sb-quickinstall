@@ -11,8 +11,26 @@ sudo swapon /home/Downloads/swapfile
 
 echo '* - nofile 999900' | sudo tee -a /etc/security/limits.conf
 ulimit -n 999900
-echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
-echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
+cat > /etc/sysctl.d/99-custom.conf <<EOF
+net.ipv4.tcp_congestion_control = bbr
+net.core.default_qdisc = fq
+net.core.rmem_max = 33554432
+net.core.wmem_max = 33554432
+net.core.somaxconn = 4096
+net.ipv4.tcp_max_syn_backlog = 4096
+net.ipv4.tcp_rmem = 4096 1048576 33554432
+net.ipv4.tcp_wmem = 4096 1048576 33554432
+net.ipv4.tcp_window_scaling = 1
+net.ipv4.tcp_adv_win_scale = 1
+net.ipv4.tcp_fastopen = 3
+net.ipv4.ip_forward = 1
+net.ipv6.conf.all.forwarding = 1
+net.ipv4.tcp_timestamps = 1
+net.ipv4.tcp_sack = 1
+kernel.panic = 1
+vm.swappiness = 3
+EOF
+sysctl --system
 sysctl -p
 sysctl net.ipv4.tcp_available_congestion_control
 lsmod | grep bbr
