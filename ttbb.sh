@@ -9,9 +9,9 @@ HOMEDIR=$(eval echo ~$USERNAME)
 WEB_USER="admin"
 WEB_PASS="99905230523.aoi"  #  <-- 修改为你需要的密码
 
-echo "📦 安装 Syncthing..."
+echo "📦 安装 Syncthing npm..."
 sudo apt update
-sudo apt install -y nodejs
+sudo apt install -y nodejs npm
 sudo apt install -y syncthing
 
 echo "📁 创建 systemd 服务配置文件..."
